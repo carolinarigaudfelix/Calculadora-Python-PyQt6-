@@ -52,7 +52,7 @@ color: rgb(0, 0, 0);</string>
          <item row="1" column="1">
           <layout class="QGridLayout" name="gridLayout">
            <item row="8" column="4">
-            <widget class="QPushButton" name="btn_result">
+            <widget class="QPushButton" name="pushButton_equals">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -67,7 +67,7 @@ color: rgb(0, 0, 0);</string>
             </widget>
            </item>
            <item row="6" column="0">
-            <widget class="QPushButton" name="btn_4">
+            <widget class="QPushButton" name="pushButton_4">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -83,7 +83,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="7" column="2">
-            <widget class="QPushButton" name="btn_3">
+            <widget class="QPushButton" name="pushButton_3">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -99,7 +99,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="2" column="4">
-            <widget class="QPushButton" name="btn_division">
+            <widget class="QPushButton" name="pushButton_divide">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -114,7 +114,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="6" column="1">
-            <widget class="QPushButton" name="btn_5">
+            <widget class="QPushButton" name="pushButton_5">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -130,7 +130,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="7" column="4">
-            <widget class="QPushButton" name="btn_addition">
+            <widget class="QPushButton" name="pushButton_add">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -145,7 +145,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="6" column="2">
-            <widget class="QPushButton" name="btn_6">
+            <widget class="QPushButton" name="pushButton_6">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -161,7 +161,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="4" column="4">
-            <widget class="QPushButton" name="btn_multiplication">
+            <widget class="QPushButton" name="pushButton_multiply">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -176,7 +176,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="7" column="1">
-            <widget class="QPushButton" name="btn_2">
+            <widget class="QPushButton" name="pushButton_2">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -192,7 +192,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="8" column="1">
-            <widget class="QPushButton" name="btn_0">
+            <widget class="QPushButton" name="pushButton_0">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -208,7 +208,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="7" column="0">
-            <widget class="QPushButton" name="btn_1">
+            <widget class="QPushButton" name="pushButton_1">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -224,7 +224,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="8" column="2">
-            <widget class="QPushButton" name="btn_dot">
+            <widget class="QPushButton" name="pushButton_dot">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -240,7 +240,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="4" column="1">
-            <widget class="QPushButton" name="btn_8">
+            <widget class="QPushButton" name="pushButton_8">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -256,7 +256,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="6" column="4">
-            <widget class="QPushButton" name="btn_subtraction">
+            <widget class="QPushButton" name="pushButton_subtract">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -271,7 +271,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="4" column="0">
-            <widget class="QPushButton" name="btn_7">
+            <widget class="QPushButton" name="pushButton_7">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -287,7 +287,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="4" column="2">
-            <widget class="QPushButton" name="btn_9">
+            <widget class="QPushButton" name="pushButton_9">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -303,7 +303,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="2" column="0">
-            <widget class="QPushButton" name="btn_clear">
+            <widget class="QPushButton" name="pushButton_clear">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -318,7 +318,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="2" column="1">
-            <widget class="QPushButton" name="btn_delete_2">
+            <widget class="QPushButton" name="pushButton_delete">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -333,7 +333,7 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="2" column="2">
-            <widget class="QPushButton" name="btn_potentiation">
+            <widget class="QPushButton" name="pushButton_potentiation">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -362,7 +362,7 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>360</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
