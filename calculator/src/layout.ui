@@ -36,19 +36,6 @@ color: rgb(255, 255, 255);</string>
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
-         <item row="0" column="1">
-          <widget class="QLCDNumber" name="visor">
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="1">
           <layout class="QGridLayout" name="gridLayout">
            <item row="8" column="4">
@@ -348,6 +335,14 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
           </layout>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLCDNumber" name="visor">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+color:rgb(0, 0, 0)</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
