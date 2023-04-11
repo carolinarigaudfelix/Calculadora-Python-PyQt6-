@@ -34,7 +34,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.operador = ""
         self.current_text = ""
         self.iterator=1
-        self.vis = QLCDNumber()
+        
         
 
 
@@ -53,40 +53,50 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
            self.pushButton_equals.setText("")
 
     def ponto(self):
-        if '.' not in self.num1:
-            self.visor.display(+ '.')
-        # teste = str(self.current_text)
-        # print(teste)
-        # # Verifique se já há um ponto na tela
-        # if '.' not in self.visor:
-        #     # Se não houver, adicione um ponto
-        #     self.visor.display(self.visor.display + '.')
+        numero = self.sender().text() 
+        if self.operador == "":
+            if "." in self.num1:
+                self.num1 += numero
+                self.visor.display(self.num1)
 
-    def remover_numero(self):
-        i = self.iterator = self.iterator + 1
-        resultado = str(self.current_text)
-        # i=0
-        # for i in resultado:
-        #     print(i)
-        print(resultado[:-i])
+            else:
+                self.num1 += numero
+                self.visor.display(self.num1)
+        else:
+            if "." in self.num2:
+                self.num2 += numero
+                self.visor.display(self.num2)
+
+            else:
+                self.num2 += numero
+                self.visor.display(self.num2)
         
 
-        # print(resultado)
-        # new_result = resultado[:-1]
-        # self.visor.display(str(new_result))
+    def remover_numero(self):
+        i = self.iterator
+        new_num = self.num1[:-i]
+        self.visor.display(new_num)
+        self.iterator =i
+        self.num1 = new_num
+
+
+       
+
+
+
 
     def calcular(self):
            if self.num1 != "" and self.num2 != "":
                if self.operador == "+":
-                   resultado = float(self.num1) + float(self.num2)
+                   resultado = round(float(self.num1) + float(self.num2),2)
                elif self.operador == "-":
-                   resultado = float(self.num1) - float(self.num2)
+                   resultado = round(float(self.num1) - float(self.num2),2)
                elif self.operador == "*":
-                   resultado = float(self.num1) * float(self.num2)
+                   resultado = round(float(self.num1) * float(self.num2),2)
                elif self.operador == "/":
-                   resultado = float(self.num1) / float(self.num2)
+                   resultado = round(float(self.num1) / float(self.num2),2)
                elif self.operador == "^":
-                   resultado = pow(float(self.num1),float(self.num2))
+                   resultado = round(pow(float(self.num1),float(self.num2)),2)
                self.visor.display(str(resultado))
                self.num1 = str(resultado)
                self.num2 = ""
@@ -95,11 +105,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                print(self.current_text)
 
     def clear_pressed(self):
-        self.resultado = 0
-        self.operador = 0
-        self.num1 = 0
-        self.num2 = 0
         self.visor.display('')
+        self.num1 = ""
+        self.num2 = ""
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
