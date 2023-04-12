@@ -1,1 +1,1 @@
-# Calculator---Python
+# Calculadora Python (PyQt6)
