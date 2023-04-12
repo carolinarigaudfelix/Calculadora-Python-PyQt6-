@@ -20,7 +20,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_8.clicked.connect(self.adicionar_numero)
         self.pushButton_9.clicked.connect(self.adicionar_numero)
         self.pushButton_add.clicked.connect(self.adicionar_operador)
-        self.pushButton_subtract.clicked.connect(self.adicionar_operador)
+        self.pushButton_subtract.clicked.connect(self.adicionar_negativo)
         self.pushButton_multiply.clicked.connect(self.adicionar_operador)
         self.pushButton_divide.clicked.connect(self.adicionar_operador)
         self.pushButton_potentiation.clicked.connect(self.adicionar_operador)
@@ -35,41 +35,60 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.current_text = ""
         self.iterator=1
         
-        
-
 
     def adicionar_numero(self):
         numero = self.sender().text()
-        if self.operador == "":
+        if self.operador == "":     #primeiro digito, qnd n tem operador
             self.num1 += numero
             self.visor.display(self.num1)
         else:
             self.num2 += numero
             self.visor.display(self.num2)
-        print(numero)
-        
+        print(self.current_text)
+
+
+
     def adicionar_operador(self):
            self.operador = self.sender().text()
-           self.pushButton_equals.setText("")
+
 
     def ponto(self):
-        numero = self.sender().text() 
-        if self.operador == "":
-            if "." in self.num1:
-                self.num1 += numero
-                self.visor.display(self.num1)
+        if self.num1 != "" and "." not in self.num1:
+            numero = self.sender().text() 
+            if self.operador == "":
+                if "." in self.num1:
+                    self.num1 += numero
+                    self.visor.display(self.num1)
 
+                else:
+                    self.num1 += numero
+                    self.visor.display(self.num1)
             else:
-                self.num1 += numero
-                self.visor.display(self.num1)
-        else:
-            if "." in self.num2:
-                self.num2 += numero
-                self.visor.display(self.num2)
+                if "." in self.num1:
+                    self.num1 += numero
+                    self.visor.display(self.num1)
 
+                else:
+                    self.num1 += numero
+                    self.visor.display(self.num1)
+        if self.num2 != "" and "." not in self.num2:
+            numero = self.sender().text() 
+            if self.operador == "":
+                if "." in self.num2:
+                    self.num2 += numero
+                    self.visor.display(self.num2)
+
+                else:
+                    self.num2 += numero
+                    self.visor.display(self.num2)
             else:
-                self.num2 += numero
-                self.visor.display(self.num2)
+                if "." in self.num2:
+                    self.num2 += numero
+                    self.visor.display(self.num2)
+
+                else:
+                    self.num2 += numero
+                    self.visor.display(self.num2)
         
 
     def remover_numero(self):
@@ -80,29 +99,53 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.num1 = new_num
 
 
-       
-
-
-
-
     def calcular(self):
-           if self.num1 != "" and self.num2 != "":
-               if self.operador == "+":
-                   resultado = round(float(self.num1) + float(self.num2),2)
-               elif self.operador == "-":
-                   resultado = round(float(self.num1) - float(self.num2),2)
-               elif self.operador == "*":
-                   resultado = round(float(self.num1) * float(self.num2),2)
-               elif self.operador == "/":
-                   resultado = round(float(self.num1) / float(self.num2),2)
-               elif self.operador == "^":
-                   resultado = round(pow(float(self.num1),float(self.num2)),2)
-               self.visor.display(str(resultado))
-               self.num1 = str(resultado)
-               self.num2 = ""
-               self.operador = ""
-               self.current_text = resultado
-               print(self.current_text)
+        if self.num1 != "" and self.num2 != "":
+            if self.operador == "+":
+                resultado = round(float(self.num1) + float(self.num2),2)
+                if float(self.num1) < 0 and float(self.num2) < 0:
+                    resultado = "-" + str(abs(resultado))
+                elif float(self.num1) < 0 or float(self.num2) < 0:
+                        resultado = str(resultado)
+                        self.visor.display(resultado)
+                        self.num1 = str(resultado)  # armazena o resultado em num1
+                        self.num2 = ""  # limpa num2
+                        self.operador = ""
+            elif self.operador == "*":
+                resultado = round(float(self.num1) * float(self.num2),2)
+            elif self.operador == "/":
+                resultado = round(float(self.num1) / float(self.num2),2)
+            elif self.operador == "^":
+                resultado = round(pow(float(self.num1),float(self.num2)),2)
+            self.visor.display(str(resultado))
+
+            self.num1 = str(resultado)
+            self.num2 = ""
+            self.operador = ""
+            self.current_text = resultado
+            print(self.current_text)
+
+    def adicionar_negativo(self):
+        if self.operador == "":
+            if self.num1 == "":
+                self.num1 += "-"
+                self.visor.display(self.num1)
+            elif self.num1[0] == "-":
+                self.num1 = self.num1[1:]
+                self.visor.display(self.num1)
+            else:
+                self.num1 = "-" + self.num1
+                self.visor.display(self.num1)
+        else:
+            if self.num2 == "":
+                self.num2 += "-"
+                self.visor.display(self.num2)
+            elif self.num2[0] == "-":
+                self.num2 = self.num2[1:]
+                self.visor.display(self.num2)
+            else:
+                self.num2 = "-" + self.num2
+                self.visor.display(self.num2)
 
     def clear_pressed(self):
         self.visor.display('')
