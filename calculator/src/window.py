@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'layout.ui'
+## Form generated from reading UI file 'design.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.0
 ##
@@ -15,211 +15,406 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QLCDNumber, QMainWindow, QMenuBar, QPushButton,
-    QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
+    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(692, 607)
+        MainWindow.resize(469, 710)
+        MainWindow.setStyleSheet(u"background-color: rgb(21, 21, 21);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.horizontalLayout = QHBoxLayout(self.centralwidget)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.frame = QFrame(self.centralwidget)
-        self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"background-color: rgb(38, 97, 175);\n"
-"color: rgb(255, 255, 255);")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.gridLayout_2 = QGridLayout(self.frame)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.centralwidget.setStyleSheet(u"background-color: rgb(21, 21, 21);")
+        self.verticalLayout = QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.pushButton_6 = QPushButton(self.frame)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        font = QFont()
-        font.setPointSize(14)
-        self.pushButton_6.setFont(font)
-        self.pushButton_6.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_6, 6, 2, 1, 1)
-
-        self.pushButton_multiply = QPushButton(self.frame)
-        self.pushButton_multiply.setObjectName(u"pushButton_multiply")
-        self.pushButton_multiply.setFont(font)
-        self.pushButton_multiply.setStyleSheet(u"background: rgb(85, 170, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_multiply, 4, 4, 1, 1)
-
-        self.pushButton_add = QPushButton(self.frame)
-        self.pushButton_add.setObjectName(u"pushButton_add")
-        self.pushButton_add.setFont(font)
-        self.pushButton_add.setStyleSheet(u"background: rgb(85, 170, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_add, 7, 4, 1, 1)
-
-        self.pushButton_0 = QPushButton(self.frame)
-        self.pushButton_0.setObjectName(u"pushButton_0")
-        self.pushButton_0.setFont(font)
-        self.pushButton_0.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_0, 8, 1, 1, 1)
-
-        self.pushButton_2 = QPushButton(self.frame)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_2, 7, 1, 1, 1)
-
-        self.pushButton_1 = QPushButton(self.frame)
-        self.pushButton_1.setObjectName(u"pushButton_1")
-        self.pushButton_1.setFont(font)
-        self.pushButton_1.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_1, 7, 0, 1, 1)
-
-        self.pushButton_clear = QPushButton(self.frame)
-        self.pushButton_clear.setObjectName(u"pushButton_clear")
-        self.pushButton_clear.setFont(font)
-        self.pushButton_clear.setStyleSheet(u"background: rgb(85, 170, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_clear, 2, 0, 1, 1)
-
-        self.pushButton_subtract = QPushButton(self.frame)
+        self.pushButton_subtract = QPushButton(self.centralwidget)
         self.pushButton_subtract.setObjectName(u"pushButton_subtract")
-        self.pushButton_subtract.setFont(font)
-        self.pushButton_subtract.setStyleSheet(u"background: rgb(85, 170, 255);")
+        sizePolicy = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_subtract.sizePolicy().hasHeightForWidth())
+        self.pushButton_subtract.setSizePolicy(sizePolicy)
+        self.pushButton_subtract.setStyleSheet(u"QPushButton{\n"
+"font: 75 36pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(255, 73, 170);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{ \n"
+"	background-color: rgb(255, 235, 255);\n"
+"	color: rgb(255, 112, 181);\n"
+"}")
 
-        self.gridLayout.addWidget(self.pushButton_subtract, 6, 4, 1, 1)
+        self.gridLayout.addWidget(self.pushButton_subtract, 3, 3, 1, 1)
 
-        self.pushButton_8 = QPushButton(self.frame)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setFont(font)
-        self.pushButton_8.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_8, 4, 1, 1, 1)
-
-        self.pushButton_dot = QPushButton(self.frame)
-        self.pushButton_dot.setObjectName(u"pushButton_dot")
-        self.pushButton_dot.setFont(font)
-        self.pushButton_dot.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_dot, 8, 2, 1, 1)
-
-        self.pushButton_9 = QPushButton(self.frame)
-        self.pushButton_9.setObjectName(u"pushButton_9")
-        self.pushButton_9.setFont(font)
-        self.pushButton_9.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_9, 4, 2, 1, 1)
-
-        self.pushButton_7 = QPushButton(self.frame)
-        self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setFont(font)
-        self.pushButton_7.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_7, 4, 0, 1, 1)
-
-        self.pushButton_delete = QPushButton(self.frame)
-        self.pushButton_delete.setObjectName(u"pushButton_delete")
-        self.pushButton_delete.setFont(font)
-        self.pushButton_delete.setStyleSheet(u"background: rgb(85, 170, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_delete, 2, 1, 1, 1)
-
-        self.pushButton_potentiation = QPushButton(self.frame)
-        self.pushButton_potentiation.setObjectName(u"pushButton_potentiation")
-        self.pushButton_potentiation.setFont(font)
-        self.pushButton_potentiation.setStyleSheet(u"background: rgb(85, 170, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_potentiation, 2, 2, 1, 1)
-
-        self.pushButton_divide = QPushButton(self.frame)
-        self.pushButton_divide.setObjectName(u"pushButton_divide")
-        self.pushButton_divide.setFont(font)
-        self.pushButton_divide.setStyleSheet(u"background: rgb(85, 170, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_divide, 2, 4, 1, 1)
-
-        self.pushButton_5 = QPushButton(self.frame)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setFont(font)
-        self.pushButton_5.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_5, 6, 1, 1, 1)
-
-        self.pushButton_3 = QPushButton(self.frame)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_3, 7, 2, 1, 1)
-
-        self.pushButton_equals = QPushButton(self.frame)
-        self.pushButton_equals.setObjectName(u"pushButton_equals")
-        self.pushButton_equals.setFont(font)
-        self.pushButton_equals.setStyleSheet(u"background: rgb(85, 170, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_equals, 8, 4, 1, 1)
-
-        self.pushButton_4 = QPushButton(self.frame)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setFont(font)
-        self.pushButton_4.setStyleSheet(u"background-color: rgb(157, 195, 255);\n"
-"color: rgb(255, 255, 255);")
-
-        self.gridLayout.addWidget(self.pushButton_4, 6, 0, 1, 1)
-
-
-        self.gridLayout_2.addLayout(self.gridLayout, 1, 1, 1, 1)
-
-        self.visor = QLCDNumber(self.frame)
-        self.visor.setObjectName(u"visor")
-        font1 = QFont()
-        font1.setFamilies([u"MS Shell Dlg 2"])
-        font1.setPointSize(4)
-        font1.setBold(False)
-        font1.setItalic(False)
-        self.visor.setFont(font1)
-        self.visor.setStyleSheet(u"color:rgb(0, 0, 0);\n"
+        self.pushButton_2 = QPushButton(self.centralwidget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        sizePolicy.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
+        self.pushButton_2.setSizePolicy(sizePolicy)
+        self.pushButton_2.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(173, 173, 173);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
 "background-color: rgb(255, 255, 255);\n"
-"font: 4pt \"MS Shell Dlg 2\";\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
 "")
 
-        self.gridLayout_2.addWidget(self.visor, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.pushButton_2, 4, 1, 1, 1)
+
+        self.pushButton_3 = QPushButton(self.centralwidget)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        sizePolicy.setHeightForWidth(self.pushButton_3.sizePolicy().hasHeightForWidth())
+        self.pushButton_3.setSizePolicy(sizePolicy)
+        self.pushButton_3.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(173, 173, 173);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_3, 4, 2, 1, 1)
+
+        self.pushButton_1 = QPushButton(self.centralwidget)
+        self.pushButton_1.setObjectName(u"pushButton_1")
+        sizePolicy.setHeightForWidth(self.pushButton_1.sizePolicy().hasHeightForWidth())
+        self.pushButton_1.setSizePolicy(sizePolicy)
+        self.pushButton_1.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(173, 173, 173);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_1, 4, 0, 1, 1)
+
+        self.pushButton_6 = QPushButton(self.centralwidget)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+        sizePolicy.setHeightForWidth(self.pushButton_6.sizePolicy().hasHeightForWidth())
+        self.pushButton_6.setSizePolicy(sizePolicy)
+        self.pushButton_6.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(173, 173, 173);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_6, 3, 2, 1, 1)
+
+        self.pushButton_clear = QPushButton(self.centralwidget)
+        self.pushButton_clear.setObjectName(u"pushButton_clear")
+        sizePolicy.setHeightForWidth(self.pushButton_clear.sizePolicy().hasHeightForWidth())
+        self.pushButton_clear.setSizePolicy(sizePolicy)
+        self.pushButton_clear.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"		background-color: rgb(255, 140, 211);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_clear, 1, 0, 1, 1)
+
+        self.pushButton_divide = QPushButton(self.centralwidget)
+        self.pushButton_divide.setObjectName(u"pushButton_divide")
+        sizePolicy.setHeightForWidth(self.pushButton_divide.sizePolicy().hasHeightForWidth())
+        self.pushButton_divide.setSizePolicy(sizePolicy)
+        self.pushButton_divide.setStyleSheet(u"QPushButton{\n"
+"font: 75 36pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(255, 73, 170);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{ \n"
+"	background-color: rgb(255, 235, 255);\n"
+"	color: rgb(255, 112, 181);\n"
+"}")
+
+        self.gridLayout.addWidget(self.pushButton_divide, 1, 3, 1, 1)
+
+        self.pushButton_7 = QPushButton(self.centralwidget)
+        self.pushButton_7.setObjectName(u"pushButton_7")
+        sizePolicy.setHeightForWidth(self.pushButton_7.sizePolicy().hasHeightForWidth())
+        self.pushButton_7.setSizePolicy(sizePolicy)
+        self.pushButton_7.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(173, 173, 173);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_7, 2, 0, 1, 1)
+
+        self.pushButton_potentiation = QPushButton(self.centralwidget)
+        self.pushButton_potentiation.setObjectName(u"pushButton_potentiation")
+        sizePolicy.setHeightForWidth(self.pushButton_potentiation.sizePolicy().hasHeightForWidth())
+        self.pushButton_potentiation.setSizePolicy(sizePolicy)
+        self.pushButton_potentiation.setStyleSheet(u"QPushButton{\n"
+"font: 75 36pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(255, 73, 170);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{ \n"
+"	background-color: rgb(255, 235, 255);\n"
+"	color: rgb(255, 112, 181);\n"
+"}\n"
+"	")
+
+        self.gridLayout.addWidget(self.pushButton_potentiation, 1, 2, 1, 1)
+
+        self.pushButton_delete = QPushButton(self.centralwidget)
+        self.pushButton_delete.setObjectName(u"pushButton_delete")
+        sizePolicy.setHeightForWidth(self.pushButton_delete.sizePolicy().hasHeightForWidth())
+        self.pushButton_delete.setSizePolicy(sizePolicy)
+        self.pushButton_delete.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"		background-color: rgb(255, 140, 211);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_delete, 1, 1, 1, 1)
+
+        self.pushButton_8 = QPushButton(self.centralwidget)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+        sizePolicy.setHeightForWidth(self.pushButton_8.sizePolicy().hasHeightForWidth())
+        self.pushButton_8.setSizePolicy(sizePolicy)
+        self.pushButton_8.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(173, 173, 173);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_8, 2, 1, 1, 1)
+
+        self.pushButton_5 = QPushButton(self.centralwidget)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        sizePolicy.setHeightForWidth(self.pushButton_5.sizePolicy().hasHeightForWidth())
+        self.pushButton_5.setSizePolicy(sizePolicy)
+        self.pushButton_5.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(173, 173, 173);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_5, 3, 1, 1, 1)
+
+        self.pushButton_4 = QPushButton(self.centralwidget)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        sizePolicy.setHeightForWidth(self.pushButton_4.sizePolicy().hasHeightForWidth())
+        self.pushButton_4.setSizePolicy(sizePolicy)
+        self.pushButton_4.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(173, 173, 173);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_4, 3, 0, 1, 1)
+
+        self.pushButton_9 = QPushButton(self.centralwidget)
+        self.pushButton_9.setObjectName(u"pushButton_9")
+        sizePolicy.setHeightForWidth(self.pushButton_9.sizePolicy().hasHeightForWidth())
+        self.pushButton_9.setSizePolicy(sizePolicy)
+        self.pushButton_9.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(173, 173, 173);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_9, 2, 2, 1, 1)
+
+        self.pushButton_multiply = QPushButton(self.centralwidget)
+        self.pushButton_multiply.setObjectName(u"pushButton_multiply")
+        sizePolicy.setHeightForWidth(self.pushButton_multiply.sizePolicy().hasHeightForWidth())
+        self.pushButton_multiply.setSizePolicy(sizePolicy)
+        self.pushButton_multiply.setStyleSheet(u"QPushButton{\n"
+"font: 75 36pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(255, 73, 170);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{ \n"
+"	background-color: rgb(255, 235, 255);\n"
+"	color: rgb(255, 112, 181);\n"
+"}")
+
+        self.gridLayout.addWidget(self.pushButton_multiply, 2, 3, 1, 1)
+
+        self.pushButton_equals = QPushButton(self.centralwidget)
+        self.pushButton_equals.setObjectName(u"pushButton_equals")
+        sizePolicy.setHeightForWidth(self.pushButton_equals.sizePolicy().hasHeightForWidth())
+        self.pushButton_equals.setSizePolicy(sizePolicy)
+        self.pushButton_equals.setStyleSheet(u"QPushButton{\n"
+"font: 75 36pt \"MS ShellL Dlg 2\";\n"
+"	\n"
+"	background-color: rgb(255, 140, 211);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{ \n"
+"	background-color: rgb(255, 235, 255);\n"
+"	color: rgb(255, 112, 181);\n"
+"}")
+
+        self.gridLayout.addWidget(self.pushButton_equals, 5, 3, 1, 1)
+
+        self.pushButton_0 = QPushButton(self.centralwidget)
+        self.pushButton_0.setObjectName(u"pushButton_0")
+        sizePolicy.setHeightForWidth(self.pushButton_0.sizePolicy().hasHeightForWidth())
+        self.pushButton_0.setSizePolicy(sizePolicy)
+        self.pushButton_0.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(173, 173, 173);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_0, 5, 1, 1, 1)
+
+        self.pushButton_add = QPushButton(self.centralwidget)
+        self.pushButton_add.setObjectName(u"pushButton_add")
+        sizePolicy.setHeightForWidth(self.pushButton_add.sizePolicy().hasHeightForWidth())
+        self.pushButton_add.setSizePolicy(sizePolicy)
+        self.pushButton_add.setStyleSheet(u"QPushButton{\n"
+"font: 75 36pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(255, 73, 170);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{ \n"
+"	background-color: rgb(255, 235, 255);\n"
+"	color: rgb(255, 112, 181);\n"
+"}")
+
+        self.gridLayout.addWidget(self.pushButton_add, 4, 3, 1, 1)
+
+        self.pushButton_dot = QPushButton(self.centralwidget)
+        self.pushButton_dot.setObjectName(u"pushButton_dot")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.pushButton_dot.sizePolicy().hasHeightForWidth())
+        self.pushButton_dot.setSizePolicy(sizePolicy1)
+        self.pushButton_dot.setStyleSheet(u"QPushButton{\n"
+"font: 75 36pt \"MS ShellL Dlg 2\";\n"
+"	background-color: rgb(255, 73, 170);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{ \n"
+"	background-color: rgb(255, 235, 255);\n"
+"	color: rgb(255, 112, 181);\n"
+"}")
+
+        self.gridLayout.addWidget(self.pushButton_dot, 5, 2, 1, 1)
+
+        self.visor = QLabel(self.centralwidget)
+        self.visor.setObjectName(u"visor")
+        sizePolicy.setHeightForWidth(self.visor.sizePolicy().hasHeightForWidth())
+        self.visor.setSizePolicy(sizePolicy)
+        self.visor.setStyleSheet(u"font: 36pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);\n"
+"")
+        self.visor.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.visor, 0, 0, 1, 4)
 
 
-        self.horizontalLayout_2.addWidget(self.frame)
-
-
-        self.horizontalLayout.addLayout(self.horizontalLayout_2)
+        self.verticalLayout.addLayout(self.gridLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 692, 21))
+        self.menubar.setGeometry(QRect(0, 0, 469, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
-        font2 = QFont()
-        font2.setPointSize(9)
-        self.statusbar.setFont(font2)
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
@@ -229,24 +424,25 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"6", None))
-        self.pushButton_multiply.setText(QCoreApplication.translate("MainWindow", u"*", None))
-        self.pushButton_add.setText(QCoreApplication.translate("MainWindow", u"+", None))
-        self.pushButton_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.pushButton_subtract.setText(QCoreApplication.translate("MainWindow", u"\u2013", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"2", None))
-        self.pushButton_1.setText(QCoreApplication.translate("MainWindow", u"1", None))
-        self.pushButton_clear.setText(QCoreApplication.translate("MainWindow", u"C", None))
-        self.pushButton_subtract.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"8", None))
-        self.pushButton_dot.setText(QCoreApplication.translate("MainWindow", u".", None))
-        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"9", None))
-        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"7", None))
-        self.pushButton_delete.setText(QCoreApplication.translate("MainWindow", u"D", None))
-        self.pushButton_potentiation.setText(QCoreApplication.translate("MainWindow", u"^", None))
-        self.pushButton_divide.setText(QCoreApplication.translate("MainWindow", u"/", None))
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"5", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"3", None))
-        self.pushButton_equals.setText(QCoreApplication.translate("MainWindow", u"=", None))
+        self.pushButton_1.setText(QCoreApplication.translate("MainWindow", u"1", None))
+        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"6", None))
+        self.pushButton_clear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
+        self.pushButton_divide.setText(QCoreApplication.translate("MainWindow", u"\u00f7", None))
+        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"7", None))
+        self.pushButton_potentiation.setText(QCoreApplication.translate("MainWindow", u"^", None))
+        self.pushButton_delete.setText(QCoreApplication.translate("MainWindow", u"Del", None))
+        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"8", None))
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"5", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"4", None))
+        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"9", None))
+        self.pushButton_multiply.setText(QCoreApplication.translate("MainWindow", u"\u00d7", None))
+        self.pushButton_equals.setText(QCoreApplication.translate("MainWindow", u"=", None))
+        self.pushButton_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.pushButton_add.setText(QCoreApplication.translate("MainWindow", u"+", None))
+        self.pushButton_dot.setText(QCoreApplication.translate("MainWindow", u".", None))
+        self.visor.setText(QCoreApplication.translate("MainWindow", u"0", None))
     # retranslateUi
 

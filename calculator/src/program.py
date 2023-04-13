@@ -1,6 +1,6 @@
 import sys
 from PySide6 import QtCore, QtGui, QtWidgets
-from window import Ui_MainWindow, QLCDNumber
+from window import Ui_MainWindow
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -34,23 +34,25 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.operador = ""
         self.current_text = ""
         self.iterator=1
+        self.resultado = 0.0
         
 
     def adicionar_numero(self):
+    
         numero = self.sender().text()
+        
+        print(numero)
         if self.operador == "":     #primeiro digito, qnd n tem operador
             self.num1 += numero
-            self.visor.display(self.num1)
+            self.visor.setText(self.num1)
         else:
             self.num2 += numero
-            self.visor.display(self.num2)
+            self.visor.setText(self.num2)
         print(self.current_text)
-
-
+        
 
     def adicionar_operador(self):
            self.operador = self.sender().text()
-
 
     def ponto(self):
         if self.num1 != "" and "." not in self.num1:
@@ -58,48 +60,48 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             if self.operador == "":
                 if "." in self.num1:
                     self.num1 += numero
-                    self.visor.display(self.num1)
+                    self.visor.setText(self.num1)
 
                 else:
                     self.num1 += numero
-                    self.visor.display(self.num1)
+                    self.visor.setText(self.num1)
             else:
                 if "." in self.num1:
                     self.num1 += numero
-                    self.visor.display(self.num1)
+                    self.visor.setText(self.num1)
 
                 else:
                     self.num1 += numero
-                    self.visor.display(self.num1)
+                    self.visor.setText(self.num1)
         if self.num2 != "" and "." not in self.num2:
             numero = self.sender().text() 
             if self.operador == "":
                 if "." in self.num2:
                     self.num2 += numero
-                    self.visor.display(self.num2)
+                    self.visor.setText(self.num2)
 
                 else:
                     self.num2 += numero
-                    self.visor.display(self.num2)
+                    self.visor.setText(self.num2)
             else:
                 if "." in self.num2:
                     self.num2 += numero
-                    self.visor.display(self.num2)
+                    self.visor.setText(self.num2)
 
                 else:
                     self.num2 += numero
-                    self.visor.display(self.num2)
+                    self.visor.setText(self.num2)
         
 
     def remover_numero(self):
         i = self.iterator
         new_num = self.num1[:-i]
-        self.visor.display(new_num)
+        self.visor.setText(new_num)
         self.iterator =i
         self.num1 = new_num
 
-
     def calcular(self):
+    
         if self.num1 != "" and self.num2 != "":
             if self.operador == "+":
                 resultado = round(float(self.num1) + float(self.num2),2)
@@ -107,48 +109,59 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     resultado = "-" + str(abs(resultado))
                 elif float(self.num1) < 0 or float(self.num2) < 0:
                         resultado = str(resultado)
-                        self.visor.display(resultado)
+                        self.visor.setText(resultado)
                         self.num1 = str(resultado)  # armazena o resultado em num1
                         self.num2 = ""  # limpa num2
+                      
                         self.operador = ""
-            elif self.operador == "*":
-                resultado = round(float(self.num1) * float(self.num2),2)
-            elif self.operador == "/":
-                resultado = round(float(self.num1) / float(self.num2),2)
+            elif self.operador == "×":
+                resultado = round((float(self.num1) * float(self.num2)),2)
+               
+            elif self.operador == "÷":
+                resultado = round((float(self.num1) / float(self.num2)),2)
+                
             elif self.operador == "^":
                 resultado = round(pow(float(self.num1),float(self.num2)),2)
-            self.visor.display(str(resultado))
-
+            
+            
+            self.current_text = resultado
             self.num1 = str(resultado)
             self.num2 = ""
+            numero = self.sender().text() 
+            
+            if self.current_text != "":
+                if numero != ["+", "-", "×", "÷", "^"]:
+                    self.clear_pressed()
             self.operador = ""
-            self.current_text = resultado
             print(self.current_text)
+            self.visor.setText(str(self.current_text))
+            
 
     def adicionar_negativo(self):
         if self.operador == "":
             if self.num1 == "":
                 self.num1 += "-"
-                self.visor.display(self.num1)
+                self.visor.setText(self.num1)
             elif self.num1[0] == "-":
                 self.num1 = self.num1[1:]
-                self.visor.display(self.num1)
+                self.visor.setText(self.num1)
             else:
                 self.num1 = "-" + self.num1
-                self.visor.display(self.num1)
+                self.visor.setText(self.num1)
         else:
             if self.num2 == "":
                 self.num2 += "-"
-                self.visor.display(self.num2)
+                self.visor.setText(self.num2)
             elif self.num2[0] == "-":
                 self.num2 = self.num2[1:]
-                self.visor.display(self.num2)
+                self.visor.setText(self.num2)
             else:
                 self.num2 = "-" + self.num2
-                self.visor.display(self.num2)
+                self.visor.setText(self.num2)
 
     def clear_pressed(self):
-        self.visor.display('')
+        self.visor.setText('')
+        self.resultado = ""
         self.num1 = ""
         self.num2 = ""
 
