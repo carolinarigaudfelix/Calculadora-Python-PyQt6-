@@ -6,7 +6,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
-
+        # define o icone da janela
+        self.setWindowIcon(QtGui.QIcon("image"))
+        self.setWindowTitle("Calculator PyQt6")
+        
         # Conecta os botões aos slots
 
         self.pushButton_0.clicked.connect(self.adicionar_numero)
@@ -20,10 +23,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_8.clicked.connect(self.adicionar_numero)
         self.pushButton_9.clicked.connect(self.adicionar_numero)
         self.pushButton_add.clicked.connect(self.adicionar_operador)
-        self.pushButton_subtract.clicked.connect(self.adicionar_negativo)
+        self.pushButton_subtract.clicked.connect(self.adicionar_operador)
         self.pushButton_multiply.clicked.connect(self.adicionar_operador)
         self.pushButton_divide.clicked.connect(self.adicionar_operador)
         self.pushButton_potentiation.clicked.connect(self.adicionar_operador)
+        self.pushButton_negative.clicked.connect(self.negative_operador)
         self.pushButton_equals.clicked.connect(self.calcular)
         self.pushButton_clear.clicked.connect(self.clear_pressed)
         self.pushButton_delete.clicked.connect(self.remover_numero)
@@ -38,7 +42,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
 
     def adicionar_numero(self):
-    
         numero = self.sender().text()
         
         print(numero)
@@ -50,9 +53,30 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.visor.setText(self.num2)
         print(self.current_text)
         
-
+    def negative_operador(self):
+        if self.operador == "":
+            if self.num1 == "":
+                self.num1 += "-"
+                self.visor.setText(self.num1)
+            elif self.num1[0] == "-":
+                self.num1 = self.num1[1:]
+                self.visor.setText(self.num1)
+            else:
+                self.num1 = "-" + self.num1
+                self.visor.setText(self.num1)
+        else:
+            if self.num2 == "":
+                self.num2 += "-"
+                self.visor.setText(self.num2)
+            elif self.num2[0] == "-":
+                self.num2 = self.num2[1:]
+                self.visor.setText(self.num2)
+            else:
+                self.num2 = "-" + self.num2
+                self.visor.setText(self.num2)
     def adicionar_operador(self):
            self.operador = self.sender().text()
+
 
     def ponto(self):
         if self.num1 != "" and "." not in self.num1:
@@ -101,7 +125,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.num1 = new_num
 
     def calcular(self):
-    
         if self.num1 != "" and self.num2 != "":
             if self.operador == "+":
                 resultado = round(float(self.num1) + float(self.num2),2)
@@ -112,29 +135,31 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         self.visor.setText(resultado)
                         self.num1 = str(resultado)  # armazena o resultado em num1
                         self.num2 = ""  # limpa num2
-                      
                         self.operador = ""
+
             elif self.operador == "×":
-                resultado = round((float(self.num1) * float(self.num2)),2)
-               
+                resultado = round(float(self.num1) * float(self.num2), 2)
             elif self.operador == "÷":
-                resultado = round((float(self.num1) / float(self.num2)),2)
-                
+                resultado = round(float(self.num1) / float(self.num2), 2)
             elif self.operador == "^":
-                resultado = round(pow(float(self.num1),float(self.num2)),2)
-            
-            
+                resultado = round(pow(float(self.num1), float(self.num2)), 2)
+            elif self.operador == "–":
+                resultado = round(float(self.num1) - float(self.num2), 2)
+
             self.current_text = resultado
-            self.num1 = str(resultado)
-            self.num2 = ""
-            numero = self.sender().text() 
-            
-            if self.current_text != "":
-                if numero != ["+", "-", "×", "÷", "^"]:
-                    self.clear_pressed()
+            self.visor.setText(str(resultado))
+            self.num1 = str(resultado) # armazena o resultado em num1
+            self.num2 = "" # limpa num2
             self.operador = ""
-            print(self.current_text)
-            self.visor.setText(str(self.current_text))
+
+        elif self.num1 != "" and self.num2 == "":
+            self.operador = self.sender().text() # armazena o novo operador em operador
+            self.visor.setText(self.operador)
+        elif self.num1 == "" and self.num2 != "":
+            self.num1 = self.num2 # armazena o novo número em num1
+            self.num2 = ""
+            self.operador = self.sender().text() # armazena o novo operador em operador
+            self.visor.setText(self.operador)
             
 
     def adicionar_negativo(self):

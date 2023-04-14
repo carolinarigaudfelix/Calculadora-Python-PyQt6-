@@ -552,6 +552,33 @@ color: rgb(255, 255, 255);
         </property>
        </widget>
       </item>
+      <item row="5" column="0">
+       <widget class="QPushButton" name="pushButton_negative">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+font: 75 20pt &quot;MS ShellL Dlg 2&quot;;
+		background-color: rgb(255, 140, 211);
+	color: rgb(255, 255, 255);
+border-radius:40px;
+}
+
+QPushButton:hover{
+background-color: rgb(255, 255, 255);
+	color: rgb(79, 79, 79);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>+/-</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
    </layout>

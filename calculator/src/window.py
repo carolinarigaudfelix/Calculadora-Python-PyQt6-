@@ -405,6 +405,25 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.visor, 0, 0, 1, 4)
 
+        self.pushButton_negative = QPushButton(self.centralwidget)
+        self.pushButton_negative.setObjectName(u"pushButton_negative")
+        sizePolicy.setHeightForWidth(self.pushButton_negative.sizePolicy().hasHeightForWidth())
+        self.pushButton_negative.setSizePolicy(sizePolicy)
+        self.pushButton_negative.setStyleSheet(u"QPushButton{\n"
+"font: 75 20pt \"MS ShellL Dlg 2\";\n"
+"		background-color: rgb(255, 140, 211);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 255);\n"
+"	color: rgb(79, 79, 79);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton_negative, 5, 0, 1, 1)
+
 
         self.verticalLayout.addLayout(self.gridLayout)
 
@@ -444,5 +463,6 @@ class Ui_MainWindow(object):
         self.pushButton_add.setText(QCoreApplication.translate("MainWindow", u"+", None))
         self.pushButton_dot.setText(QCoreApplication.translate("MainWindow", u".", None))
         self.visor.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.pushButton_negative.setText(QCoreApplication.translate("MainWindow", u"+/-", None))
     # retranslateUi
 
