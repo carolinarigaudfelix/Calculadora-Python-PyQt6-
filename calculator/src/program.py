@@ -73,6 +73,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.visor.setText(self.num2)
     def adicionar_operador(self):
            self.operador = self.sender().text()
+           self.visor.setText(self.operador)
 
 
     def ponto(self):
