@@ -6,11 +6,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
-        # define o icone da janela
-        self.setWindowIcon(QtGui.QIcon("image"))
+
+
+        self.setWindowIcon(QtGui.QIcon("calculator\src\image.png"))
         self.setWindowTitle("Calculator PyQt6")
-        
-        # Conecta os botões aos slots
 
         self.pushButton_0.clicked.connect(self.adicionar_numero)
         self.pushButton_1.clicked.connect(self.adicionar_numero)
@@ -43,15 +42,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def adicionar_numero(self):
         numero = self.sender().text()
-        
-        print(numero)
-        if self.operador == "":     #primeiro digito, qnd n tem operador
+
+        if self.operador == "":
             self.num1 += numero
             self.visor.setText(self.num1)
         else:
             self.num2 += numero
             self.visor.setText(self.num2)
-        print(self.current_text)
         
     def negative_operador(self):
         if self.operador == "":
@@ -116,7 +113,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.num2 += numero
                     self.visor.setText(self.num2)
         
-
     def remover_numero(self):
         i = self.iterator
         new_num = self.num1[:-i]
@@ -133,8 +129,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 elif float(self.num1) < 0 or float(self.num2) < 0:
                         resultado = str(resultado)
                         self.visor.setText(resultado)
-                        self.num1 = str(resultado)  # armazena o resultado em num1
-                        self.num2 = ""  # limpa num2
+                        self.num1 = str(resultado)
+                        self.num2 = ""
                         self.operador = ""
 
             elif self.operador == "×":
@@ -148,20 +144,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
             self.current_text = resultado
             self.visor.setText(str(resultado))
-            self.num1 = str(resultado) # armazena o resultado em num1
-            self.num2 = "" # limpa num2
+            self.num1 = str(resultado) 
+            self.num2 = "" 
             self.operador = ""
 
         elif self.num1 != "" and self.num2 == "":
-            self.operador = self.sender().text() # armazena o novo operador em operador
+            self.operador = self.sender().text() 
             self.visor.setText(self.operador)
         elif self.num1 == "" and self.num2 != "":
-            self.num1 = self.num2 # armazena o novo número em num1
+            self.num1 = self.num2 
             self.num2 = ""
-            self.operador = self.sender().text() # armazena o novo operador em operador
+            self.operador = self.sender().text() 
             self.visor.setText(self.operador)
             
-
     def adicionar_negativo(self):
         if self.operador == "":
             if self.num1 == "":

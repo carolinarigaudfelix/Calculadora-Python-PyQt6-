@@ -24,6 +24,8 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(469, 710)
+        MainWindow.setMinimumSize(QSize(469, 710))
+        MainWindow.setMaximumSize(QSize(469, 710))
         MainWindow.setStyleSheet(u"background-color: rgb(21, 21, 21);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
