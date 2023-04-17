@@ -1,7 +1,7 @@
 # Calculadora Python (PyQt6)
 
 <div align = "center">
-  Esse projeto trata-se de uma calculadora desenvolvida em Python com a lib PyQt6 e o aplicativo QtDesigner.
+  <h1>Esse projeto trata-se de uma calculadora desenvolvida em Python com a lib PyQt6 e o aplicativo QtDesigner.</h1>
   <br>
   <br>
   <br>
