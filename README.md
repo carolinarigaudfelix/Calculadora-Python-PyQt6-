@@ -8,7 +8,7 @@
 </div>
 
 <h2 align = "center" >Sobre a Calculadora</h2>
-<p>Essa calculadora realiza as seguinte operações: Potenciação ( ^ ), Divisão ( ÷ ), Multiplicação ( × ), Divisão ( - ), Soma ( + )<br><br>
+<p>Essa calculadora realiza as seguintes operações: Potenciação ( ^ ), Divisão ( ÷ ), Multiplicação ( × ), Divisão ( - ), Soma ( + )<br><br>
 Além de dispor de botões que limpam o display e cada caracter, respectivamente: Clear e Del. E por fim o de operações com números negativos ( +/- ) <br><br></p>
 
 
